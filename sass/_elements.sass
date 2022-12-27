@@ -1,0 +1,348 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
+
+$black_upper: #374246
+$blue: #005099
+$pink: #DC295F
+$green: #A5CE31
+$orange: #F28E00
+
+body
+    min-height: 105vh
+    color: #000
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    font-family: 'Roboto', sans-serif
+    &.active
+        overflow: hidden
+
+.container
+    width: 100%
+    max-width: 1500px
+    padding: 0 16px
+    margin: 0 auto
+    position: relative
+    z-index: 1
+
+img
+    max-width: 100%
+
+h1
+    font-weight: 700
+    font-size: 48px
+    line-height: 58px
+    margin: 0 0 32px
+
+.headline
+    font-style: normal
+    font-weight: 700
+    font-size: 32px
+    line-height: 39px
+    color: $pink
+    margin: 0 0 32px 0
+
+.textline
+    font-style: normal
+    font-weight: 300
+    font-size: 24px
+    line-height: 130%
+    opacity: .95
+    margin: 0 0 40px 0
+
+.subheading
+    font-style: normal
+
+a,
+button
+    text-decoration: none
+    color: #000
+    transition: all ease .3s
+    background-color: transparent
+    &:active
+        transform: scale(.98)
+
+    &:hover
+        opacity: .8
+
+    &[disabled]
+        pointer-events: none 
+        opacity: .5
+
+section
+    padding: 32px 0
+    position: relative
+
+.btn
+    font-weight: 400
+    font-size: 18px
+    line-height: 21px
+    display: inline-block
+    text-align: center
+    color: #fff
+    padding: 10px 20px
+    background-color: $orange
+    position: relative
+    &-menu
+        display: none
+
+    &:hover
+
+    &:active
+        opacity: 1
+
+    &[disabled]
+        color: rgba(0, 0, 0, .2)
+        opacity: .5
+        cursor: unset
+        pointer-events: none
+
+.wrapper, .wrap, .socials
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.wrap
+    flex-wrap: wrap
+    &.strech
+        flex-wrap: wrap
+        align-items: stretch
+
+    &.start
+        align-items: start
+
+    &.around
+        justify-content: space-around
+
+    &.evenly
+        justify-content: space-evenly
+
+ol
+    padding: 0 0 0 25px
+    font-weight: 400
+    font-size: 20px
+    line-height: 26px
+
+input,
+textarea,
+select
+    display: block
+    background-color: #F9F9F9
+    border-radius: 4px
+    height: 42px
+    width: 100%
+    font-size: 18px
+    font-weight: 400
+    line-height: 100%
+    padding: 0 15px 0 40px
+    &::placeholder
+        color: #B8B8B8
+
+label
+    font-weight: 700
+    font-size: 16px
+    line-height: 19px
+    color: #000000
+    display: block
+    margin-bottom: 4px
+
+select
+    cursor: pointer
+    background-image: url('../img/arrow-down_black.svg')
+    background-repeat: no-repeat
+    background-position: center right 15px
+    background-size: 25px 25px
+    appearance: none
+    padding-right: 30px
+    position: relative
+    z-index: 1
+    filter: contrast(1)
+
+.inp
+    margin: 0 0 10px 0
+    width: 100%
+    max-width: 49%
+    label
+        display: block
+
+    .heading
+        display: block
+        padding-top: 4px
+        font-weight: 400
+        font-size: 16px
+        line-height: 120%
+
+    .descr
+        font-weight: 400
+        font-size: 16px
+        line-height: 22px
+        opacity: .7
+
+    &-wrap
+        margin-bottom: 20px
+        label
+            font-weight: 400
+            font-size: 16px
+            line-height: 120%
+            margin-bottom: 5px
+            color: black
+            opacity: .7
+
+        input
+            margin: 0
+
+        .wrap
+            display: flex
+            flex-wrap: nowrap
+            justify-content: space-between
+            label
+                display: block
+                width: 100%
+            input
+                width: 70%
+                // border-right: none 
+                border-radius: 6px 0px 0px 6px
+
+            select
+                font-size: 16px
+                padding: 0 15px
+                height: 50px
+                margin: 0
+                width: 30%
+                min-width: 87px
+                border-left: 0
+                border-radius: 0 6px 6px 0
+
+        &.err
+            label
+                color: red !important
+            input, select
+                border-color: rgba(red, .4)
+                animation: shadowErr 2s ease
+
+    &-count
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background: #F3F4F4
+        border-radius: 6px
+        padding: 20px 16px
+
+    &-checkbox,
+    &-radio
+        position: relative
+        z-index: 1
+        margin: 0 0 16px
+        label
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: #E7F7FA
+            background-repeat: no-repeat
+            background-size: 24px 24px
+            background-position: center right 20px
+            padding: 10px 20px
+            font-weight: 500
+            font-size: 16px
+            text-align: center
+            line-height: 19px
+            min-height: 64px
+            cursor: pointer
+
+        input
+            width: 100%
+            height: 100%
+            opacity: 0
+            margin: 0
+            position: absolute
+            z-index: -1
+            top: 0
+            left: 0
+            &:checked ~ label
+                padding-right: 60px
+                padding-left: 60px
+                color: #fff
+                background-image: url('../img/tick-white.svg')
+                background-color: $green
+
+.heading
+    font-weight: 600
+    font-size: 20px
+    line-height: 22px
+
+.text
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 22px
+
+.subheading
+    font-weight: 600
+    font-size: 32px
+    line-height: 120%
+    text-align: center
+    margin-bottom: 30px
+
+textarea
+    height: 116px
+    padding-top: 18px
+
+ul
+    padding: 0 0 0 28px
+    li
+        font-weight: 500
+        font-size: 16px
+        line-height: 20px
+        margin: 0 0 12px
+        position: relative
+
+hr
+    background-color: rgba(255, 255, 255, .3)
+    height: 1px
+    margin: 20px 0 20px
+
+.hoverDown
+    position: relative
+    z-index: 1
+    min-width: 150px
+
+    &-btn
+        background-image: url('../img/arrow_down.svg')
+        background-repeat: no-repeat
+        background-position: center right
+        background-size: 14px auto
+        padding-right: 29px
+
+    &-content
+        opacity: 0
+        visibility: hidden
+        transform: translateY(-20px)
+        position: absolute
+        top: 100%
+        width: 330px
+        left: -20px
+        background-color: #fff
+        padding: 10px 0
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, .1)
+        transition: all ease .3s
+        a
+            display: block
+            width: 100%
+            padding: 10px 20px !important
+            &:hover
+                background-color: rgba($orange, .2)
+
+    &:hover
+        .hoverDown
+            &-content
+                display: block
+                opacity: 1
+                visibility: visible
+                transform: translateY(0)
+

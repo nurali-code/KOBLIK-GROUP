@@ -1,0 +1,118 @@
+.modal
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 999
+    background-color: rgba(#000, 0.6)
+    padding: 0
+    box-sizing: border-box
+    &-content
+        width: 94%
+        min-height: 100px
+        max-height: 98%
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        background-color: #fff
+        max-width: 580px
+        overflow-y: scroll
+        color: black
+        text-align: right
+        padding: 40px 100px
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+            width: 0
+            height: 0
+
+        .headline
+            font-size: 24px
+            line-height: 29px
+            text-align: center
+
+        p
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+
+        form
+            .wrap
+                .btn
+                    width: 48%
+                    padding: 24px 0
+
+        .btn
+            margin-bottom: 24px
+
+    &-close
+        position: absolute
+        width: 40px
+        height: 40px
+        top: 30px
+        right: 30px
+        background-image: url('../img/close-black.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: 24px auto
+
+    &.is-open
+        display: block
+
+    &#modal-office
+        background-image: url(../img/arrow-big.svg)
+        background-repeat: no-repeat
+        background-position: top 110px left 25%
+        .modal
+            &-content 
+                top: 54%
+
+    @media screen and ( max-width: 1500px )
+        &#modal-office
+            background-position: top 80px left 120px
+            background-size: 180px auto
+
+    @media screen and ( max-width: 1200px )
+        &-content
+            padding: 30px 50px
+
+            .btn
+                width: 100%
+
+        &-close
+            top: 24px
+            right: 24px
+            width: 24px
+            height: 24px
+            font-size: 14px
+
+        &#modal-office
+            background-image: none !important
+
+    @media screen and ( max-width: 700px )
+
+        &-content
+            max-width: 400px
+            padding: 40px 20px
+            border-radius: 14px
+            .headline
+                font-size: 20px
+                line-height: 22px
+                margin-bottom: 15px
+
+            form
+                .wrap
+                    .btn
+                        padding: 16px 0
+                        font-size: 14px
+
+        &-close
+            top: 17px
+            right: 16px
+            font-size: 14px

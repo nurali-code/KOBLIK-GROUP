@@ -1,0 +1,78 @@
+.select
+    cursor: pointer
+    display: block
+    position: relative
+    z-index: unset
+    font-size: 16px
+    color: #fff
+    width: 100%
+    height: 72px
+    margin: 0 0 16px
+    &-hidden
+        display: none
+        visibility: hidden
+        padding-right: 10px
+    &-styled
+        border: 1px solid #000
+        border-radius: 4px
+        color: #000000
+        position: relative
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: #ffffff
+        height: 100%
+        line-height: 100%
+        display: flex
+        align-items: center
+        padding: 0 40px 0 20px
+        transition: all 0.2s ease-in
+        &:after
+            content: ""
+            width: 25px
+            display: inline-block
+            height: 25px
+            position: absolute
+            top: 37%
+            right: 20px
+            background-image: url('../img/arrow-down_black.svg')
+            background-repeat: no-repeat
+            background-position: center right 
+            background-size: cover
+        &:active:after,
+        &.active:after
+            transform: rotate(180deg)
+        &.active
+            border-color: #005099
+            background-color: #F4FBFC
+    &-options
+        display: none
+        position: absolute
+        z-index: 111
+        height: 250px
+        overflow-y: scroll
+        top: 105%
+        right: 0
+        left: 0
+        z-index: 999
+        margin: 0
+        padding: 10px 0
+        border-radius: 4px
+        list-style: none
+        border: 1px solid #005099
+        background-color: #ffffff
+        width: 100%
+        max-width: 100%
+        li
+            margin: 0
+            padding: 10px 22px
+            transition: all 0.15s ease-in
+            font-weight: 400
+            font-size: 16px
+            line-height: 19px
+            color: #000000
+            &:hover
+                background-color: #F4FBFC
+        li[rel="hide"]
+            display: none

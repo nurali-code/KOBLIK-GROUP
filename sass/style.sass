@@ -1,0 +1,1390 @@
+@import 'normolize'
+@import 'elements'
+@import 'modal'
+@import 'header'
+@import 'footer'
+@import 'select'
+@import 'slick'
+
+.hero
+    padding: 20px 0
+    overflow: hidden
+    &-slider
+        position: relative
+        z-index: 1
+        .bg
+            position: absolute
+            top: 55%
+            left: 50%
+            transform: translate(-50%, -50%)
+            max-height: 90%
+            z-index: -1
+
+    .heading
+        max-width: 640px
+        font-weight: 700
+        font-size: 48px
+        line-height: 58px
+        margin: 0 0 20px
+
+    &-slide
+        width: 1200px
+        margin: 0 auto
+        color: #fff
+        position: relative
+        padding: 35px 0 39px
+        margin: 0 0 8px
+        transition: all ease .3s
+        opacity: 0
+        &::before
+            content: ''
+            display: block
+            width: 100vw
+            height: 100%
+            position: absolute
+            bottom: -15px
+            left: 50%
+            transform: translateX(-50%)
+            z-index: -111111
+            background-color: #7AD6CA
+
+        p
+            font-size: 16px
+            line-height: 22px
+            max-width: 590px
+            margin: 0 0 30px
+
+        &.light
+            color: #000
+            &::before
+                bottom: 0
+                background-color: #E7F7FA
+
+    .slick
+        &-current
+            opacity: 1
+
+    &__img
+        position: absolute
+        bottom: 50%
+        transform: translateY(50%)
+        max-height: 100%
+        right: 0
+
+.main
+    overflow: hidden
+    p
+        font-weight: 500
+        font-size: 16px
+        line-height: 22px
+        margin-bottom: 30px
+        a
+            display: inline-block
+            color: $blue
+            text-decoration: underline
+
+    &-title
+        width: 45%
+        min-height: 300px
+        position: relative
+        &.notFound
+
+    &__img
+        display: block
+        width: 52%
+        object-fit: cover
+
+    .shapes
+        img
+            &:nth-child(2)
+                width: 22px
+                top: auto !important
+                left: 50% !important
+                bottom: 10% !important
+            &:nth-child(3)
+                width: 63px
+                top: auto !important
+                bottom: 55% !important
+                left: 63% !important
+            &:nth-child(4)
+                width: 55px
+                top: auto !important
+                bottom: 40% !important
+                left: 35% !important
+
+            &:nth-child(1)
+                width: 110px
+                left: auto !important
+                top: auto !important
+                bottom: 4% !important
+                right: 10% !important
+
+    &-wrap
+        flex-direction: row-reverse
+        align-items: flex-start
+        margin-bottom: 62px
+
+        &.notFound
+            .main__img
+                transform: translateY(-100px)
+            .shapes
+                width: 90%
+                top: 50%
+                height: 120%
+                img
+                    &:nth-child(1)
+                        width: 191px
+                        bottom: 0% !important
+                    &:nth-child(2)
+                        width: 22px
+                        top: auto !important
+                        left: 20% !important
+                        bottom: 10% !important
+                    &:nth-child(3)
+                        width: 108px
+                        top: 0 !important
+                        bottom: auto !important
+                        left: auto !important
+                        right: 0 !important
+                    &:nth-child(4)
+                        width: 95.49px
+                        bottom: 65% !important
+                        left: 20% !important
+
+    @media screen and ( max-width: 900px )
+        &-wrap
+            display: block
+            max-width: 700px
+            margin: 0 auto 67px
+
+        &__img
+            max-width: unset
+            width: calc( 100% + 32px )
+            position: relative
+            left: -16px
+            margin-bottom: 20px
+        &-title
+            width: 100%
+
+.sales
+    .wrap
+        align-items: stretch
+
+    img
+        width: 280px
+        object-fit: cover
+        min-height: 100%
+        display: block
+
+    &-title
+        padding: 20px 20px 60px
+        min-height: 248px
+        background-color: $blue
+        color: #fff
+        position: relative
+
+    .heading
+        font-weight: 700
+        font-size: 16px
+        line-height: 19px
+        margin: 0 0 15px
+
+    .text
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        margin: 0 0 20px
+
+    &__price
+        font-weight: 700
+        font-size: 16px
+        line-height: 19px
+        margin: 24px 0 0
+
+    .btn
+        &-link
+            color: #fff
+            stroke: white
+            position: absolute
+            left: 20px
+            bottom: 15px
+            z-index: 111
+            &:hover
+                opacity: .5
+
+    &-item
+        text-align: left
+        display: flex
+        width: 49%
+        margin-bottom: 20px
+        &:nth-of-type(2n+2)
+            .sales-title
+                background-color: $pink
+        &:nth-of-type(4n+3)
+            .sales-title
+                background-color: #D1609D
+        &:nth-of-type(4n)
+            .sales-title
+                background-color: $green
+
+    &.sm
+        .wrap:not(.around)
+            justify-content: flex-start
+
+        .sales
+            &-item
+                display: flex !important
+                width: 32%
+                margin-right: 2%
+                @media screen and ( min-width: 1200px )
+                    &:nth-of-type(2n+2)
+                        margin-right: 2%
+                    &:nth-of-type(3n+3)
+                        margin-right: 0
+            &-title
+                width: 67%
+                background-color: $blue
+
+        img
+            width: 33%
+
+.catalog
+    overflow: hidden
+    &-item
+        width: 30%
+        position: relative
+        text-align: left
+        font-weight: 500
+        font-size: 16px
+        line-height: 19px
+        color: #000000
+        padding: 10px 0 10px 55px
+        margin: 0 0 24px 0
+        img
+            position: absolute
+            left: 0
+            top: 4px
+            z-index: 1
+            pointer-events: none
+            height: 34px
+            width: 36px
+            object-fit: contain
+            object-position: center center
+
+        &:hover
+            text-decoration: underline
+            color: $blue
+
+        &.hidden
+            display: none
+
+    .shapes
+        img
+            &:nth-child(1)
+                left: -30px !important
+            &:nth-child(2)
+                top: 10% !important
+                left: 35% !important
+            &:nth-child(3)
+                top: 21% !important
+                left: 58% !important
+            &:nth-child(4)
+                left: auto !important
+                right: 4% !important
+            &:nth-child(5)
+                top: auto !important
+                bottom: 9% !important
+                left: auto !important
+                right: 21% !important
+
+.doctor
+    display: inline-block
+    width: 375px
+    background-color: #F4FBFC
+    padding: 0 20px 16px
+    margin: 0 15px 20px 0
+    overflow: hidden
+    text-align: center
+    img
+        max-width: unset
+        background-color: #F4F4F4
+        width: calc( 100% + 40px )
+        height: 378px
+        position: relative
+        left: -20px
+        display: block
+        object-fit: contain
+        object-position: bottom center
+        margin: 0 0 24px
+
+    &__name
+        font-weight: 500
+        font-size: 24px
+        line-height: 29px
+        margin: 0 0 18px
+
+    &__descr
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        margin: 0 0 14px
+
+    &__price
+        font-weight: 500
+        font-size: 24px
+        line-height: 29px
+        margin: 0 0 31px
+        color: $blue
+
+    .btn
+        padding: 24px 0
+        margin: 0 0 24px
+        width: 48%
+
+.doctors
+    overflow: hidden
+    .slick
+        &-slide
+            width: 377px
+            margin: 0 18px 0px 0
+
+    &-wrap
+        justify-content: space-between
+        align-items: stretch
+        .doctor
+            width: 49%
+            margin: 0 0 30px
+        @media screen and ( min-width: 1200px )
+            justify-content: flex-start
+            .doctor
+                width: 378px
+                margin: 0 17px 30px 0
+                &:nth-of-type(3n+3)
+                    margin-right: 0
+
+.path
+    padding: 14px 0 32px
+    width: 100%
+    max-width: 1170px
+    margin: 0 auto
+    a
+        font-weight: 400
+        font-size: 12px
+        line-height: 15px
+        margin: 0 0 8px
+        color: #B8B8B8
+        &::after
+            content: ''
+            display: inline-block
+            vertical-align: middle
+            width: 20px
+            height: 20px
+            background-image: url('../img/arrow.svg')
+            background-repeat: no-repeat
+            background-position: center center
+
+        &:last-of-type
+            pointer-events: none
+            &::after
+                display: none
+
+.info
+    .heading
+        font-weight: 700
+        font-size: 24px
+        line-height: 29px
+        margin: 0 0 24px
+
+    .col
+        width: 48%
+
+    .shapes
+        img
+            &:nth-child(1)
+                left: -30px !important
+            &:nth-child(2)
+                width: 191px
+                top: 1% !important
+                left: 35% !important
+            &:nth-child(3)
+                top: 18% !important
+                left: 64% !important
+            &:nth-child(4)
+                top: auto !important
+                bottom: -9% !important
+                left: 30% !important
+            &:nth-child(5)
+                width: 276px
+                top: auto !important
+                bottom: -29% !important
+                left: auto !important
+                right: 10% !important
+
+.about
+    overflow: hidden
+    .headline
+
+    .wrap
+        align-items: flex-start
+        padding: 40px 0
+        position: relative
+        z-index: 1
+        &::before
+            content: ''
+            display: block
+            width: 100vw
+            height: 100%
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+            z-index: -1
+            background-color: #F4FBFC
+
+    &-info
+        position: relative
+        img
+            display: block
+            max-width: unset
+            object-fit: cover
+            position: absolute
+            top: 0
+            left: 50%
+            width: 100vw
+            height: 100%
+            transform: translateX(-50%)
+            z-index: -1
+
+    &__description
+        background-color: rgba(#F4FBFC, .9)
+        width: 380px
+        margin: 0 0 0 auto
+        min-height: 40px
+        text-align: center
+        font-weight: 400
+        font-size: 20px
+        line-height: 24px
+        text-align: center
+        color: #005099
+        padding: 50px 30px
+
+    &-item
+        width: 240px
+        text-align: center
+        img
+            max-width: 60px
+            max-height: 60px
+            display: block
+            margin: 0 auto 20px
+        .heading
+            font-weight: 500
+            font-size: 20px
+            line-height: 24px
+            color: $blue
+            margin: 0 auto 20px
+
+        .text
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+
+.reviews
+    overflow: hidden
+    &-item
+        width: 378px
+        display: inline-flex !important
+        margin: 0 17px 0 0
+        p
+            font-size: 14px
+            line-height: 18px
+
+        a
+            &:hover
+                text-decoration: underline
+
+    img
+        width: 120px
+        display: block
+        object-fit: cover
+        border-radius: 50%
+        height: 120px
+        margin: 0 22px 0 0
+
+    &-title
+        padding: 17px
+        background-color: #F4FBFC
+        border-radius: 7px
+        position: relative
+        &::before
+            content: ''
+            display: block
+            width: 40px
+            height: 40px
+            background-color: red
+            background-color: #F4FBFC
+            border-radius: 7px
+            position: absolute
+            z-index: -1
+            top: 40px
+            left: -12px
+            transform: rotate(45deg)
+
+    &__text
+        font-weight: 400
+        margin: 0 0 20px
+
+    &__locatioin
+        margin: 8px 0 0
+        font-weight: 400
+        font-size: 12px
+        line-height: 15px
+        color: #005099
+        background-image: url('../img/location-fill.svg')
+        background-repeat: no-repeat
+        background-position: center left
+        padding-left: 18px
+        background-size: 14px 14px
+
+.reserve
+    overflow: hidden
+    .container
+        display: flex
+    img
+        width: 45%
+        object-fit: cover
+
+    form
+        background-color: #F4FBFC
+        width: 55%
+        padding: 32px 58px
+        .btn
+            margin-bottom: 16px
+
+        p
+            font-size: 12px
+            line-height: 110%
+            max-width: 400px
+
+    .heading
+        font-weight: 700
+        font-size: 24px
+        line-height: 29px
+        color: $pink
+        margin: 0 0 32px
+
+.news
+    &-item
+        background-color: $blue
+        color: #fff
+        padding: 0 20px 70px
+        position: relative
+        img
+            width: calc( 100% + 40px )
+            position: relative
+            left: -20px
+            max-width: unset
+            display: block
+            // height: 160px
+            aspect-ratio: 16/8
+            object-fit: cover
+            margin: 0 0 10px
+
+        .time
+            font-weight: 400
+            font-size: 12px
+            line-height: 15px
+            margin: 0 0 20px
+
+        .heading
+            font-weight: 700
+            font-size: 16px
+            min-height: 38px
+            line-height: 19px
+            margin: 0 0 20px
+
+        .text
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            margin: 0 0 15px
+
+        .btn-link
+            position: absolute
+            left: 20px
+            bottom: 16px
+            color: #fff
+            stroke: white
+            &:hover
+                opacity: .6
+            &:active
+                opacity: 1
+
+        .location
+            font-weight: 400
+            font-size: 12px
+            line-height: 15px
+            opacity: .5
+            background-image: url('../img/location-white.svg')
+            background-size: 14px 14px
+            background-repeat: no-repeat
+            background-position: center left
+            padding-left: 18px
+
+        @media screen and ( min-width: 700px )
+            width: 48%
+            margin: 0 0 30px 0
+        @media screen and ( min-width: 800px )
+            width: 32%
+            margin: 0 2% 30px 0
+            &:nth-of-type(3n+3)
+                margin-right: 0
+
+        @media screen and ( min-width: 1200px )
+            width: 24%
+            margin: 0 15px 30px 0
+            &:nth-of-type(4n+4)
+                margin-right: 0
+            &:nth-of-type(3n+3)
+                margin-right: 15px
+
+    .wrap:not(.around)
+        @media screen and ( min-width: 700px )
+            justify-content: space-between
+        @media screen and ( min-width: 800px )
+            justify-content: flex-start
+
+.services
+    .wrap:not(.around)
+        justify-content: flex-start
+        align-items: stretch
+
+    .wrapper
+        flex-wrap: wrap
+        align-items: flex-start
+
+    .col
+        width: 49%
+
+    &-item
+        width: 32%
+        margin: 0 2% 20px 0
+        padding: 16px 16px 8px
+        background-color: #E7F7FA
+        position: relative
+        z-index: 1
+        &::before
+            content: ''
+            display: block
+            width: 24px
+            height: 24px
+            position: absolute
+            z-index: -1
+            top: 20px
+            right: 16px
+            background-image: url('../img/arrow-circle_black.svg')
+            opacity: 0
+            transition: all ease .3s
+
+        @media screen and ( min-width: 1200px  )
+            &:nth-of-type(3n+3)
+                margin-right: 0
+
+            &:hover::before
+                opacity: 1
+
+    .heading
+        max-width: 80%
+        font-weight: 500
+        font-size: 16px
+        line-height: 19px
+        margin: 0 0 8px
+
+    .tag
+        margin: 0 8px 8px 0
+
+    &-box
+        width: 100%
+        margin: 0 0 26px
+        border: 2px solid transparent
+        border-radius: 4px
+        &.active
+            border-color: #005099
+            .services-btn::before
+                transform: rotate(90deg) translateY(-50%)
+
+    &-content
+        display: none
+        border-top: 1px solid #005099
+
+    .service
+        background-color: #fff
+        border-bottom: 1px solid #005099
+        padding: 16px 27px
+        position: relative
+        z-index: 1
+        font-weight: 400
+        font-size: 14px
+        line-height: 19px
+        transition: all ease .3s
+        &:last-of-type
+            border: none
+
+        p
+            max-width: 80%
+
+        .btn
+            opacity: 0
+            position: absolute
+            bottom: 0
+            left: 27px
+
+        &:hover
+            background-color: rgba($blue, .2)
+            padding-bottom: 70px
+            .btn
+                opacity: 1
+                bottom: 16px
+
+    &__price
+        position: absolute
+        right: 27px
+        top: 16px
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+        text-align: right
+        z-index: 1
+
+    &-btn
+        width: 100%
+        text-align: left
+        background-color: #E7F7FA
+        border-radius: 4px
+        padding: 17px 55px 17px 22px
+        min-height: 72px
+        font-weight: 500
+        font-size: 16px
+        line-height: 19px
+        position: relative
+        z-index: 1
+        &::before
+            content: ''
+            display: block
+            width: 24px
+            height: 24px
+            position: absolute
+            z-index: -1
+            top: 50%
+            right: 16px
+            transform-origin: 50% 0%
+            transform: rotate(-90deg) translateY(-50%)
+            background-image: url('../img/arrow-circle_black.svg')
+            transition: all ease .3s
+
+        &:active
+            transform: none
+
+.specialists
+    overflow: hidden
+    .wrap
+        justify-content: flex-start
+        width: 100vw
+        position: relative
+        left: -16px
+        padding: 0 16px
+        flex-wrap: nowrap
+        overflow-x: scroll
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+            width: 0
+            height: 0
+
+    &-item
+        min-width: 179px
+        width: 179px
+        background-color: #F4FBFC
+        text-align: center
+        position: relative
+        padding: 0 0 20px
+        margin: 0 17px 24px 0
+        z-index: 1
+        &::before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            background-color: rgba($green,.7 )
+            opacity: 0
+            transition: all ease .3s
+
+        &::after
+            content: 'Выбрать'
+            display: inline-block
+            padding: 12px 24px
+            color: #fff
+            background-color: $pink
+            position: absolute
+            opacity: 0
+            z-index: 10
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            transition: opacity ease-out .2s
+            background-repeat: no-repeat
+            background-position: center center
+            border-radius: 4px
+
+        img
+            width: 100%
+            height: 180px
+            object-fit: cover
+            display: block
+            margin: 0 0 8px
+
+        .heading
+            font-weight: 700
+            font-size: 16px
+            line-height: 19px
+            padding: 0 10px
+            margin: 0 0 16px
+
+        .descr
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            padding: 0 10px
+
+        @media screen and ( min-width: 1200px )
+
+            &:hover
+                opacity: 1
+                &::before,
+                &::after
+                    opacity: 1
+
+        &:last-of-type
+            margin-right: 0
+
+        &.active
+            background-color: $green
+            color: #fff
+            position: relative
+            z-index: 1
+            opacity: 1
+            pointer-events: none !important
+            &::after
+                content: ''
+                padding: 0
+                width: 24px
+                transform: none
+                background-color: transparent
+                height: 24px
+                z-index: 10
+                left: auto
+                right: 8px
+                opacity: 1
+                top: 8px
+                background-image: url('../img/tick-circle.svg')
+            &::before
+                display: none
+            .btn
+                display: none
+
+    &-table
+        display: none
+        &.active
+            display: block
+
+.feature
+    background-color: #F4FBFC
+    padding: 30px 0
+    margin: 32px 0
+    .heading
+        font-weight: 700
+        font-size: 32px
+        line-height: 39px
+        text-align: center
+        color: $blue
+        margin: 0 0 46px
+    &-item
+        width: 300px
+        text-align: center
+        img
+            margin: 0 auto 34px
+        .text
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+
+article
+    img
+        width: 30%
+        margin: 0 2% 20px 0
+        object-fit: cover
+        display: block
+        float: left
+        clear: both
+        display: table
+    p
+        float: right
+        width: 68%
+        margin: 0 0 20px
+        &::after
+            content: ""
+            clear: both
+            display: table
+    @media screen and ( max-width: 1000px )
+        max-width: 700px
+        margin: 0 auto
+        img, p
+            width: 100%
+            float: none
+            display: block
+            margin: 0 0 20px
+        img
+            max-width: unset
+            width: calc( 100% + 32px )
+            position: relative
+            left: -16px
+
+.medic
+    padding: 20px 0 60px
+    background-image: url('../img/shape-4.svg'), url('../img/shape-1.svg')
+    background-repeat: no-repeat
+    background-position: center center, right 240px bottom 100px
+    background-size: 194px auto, 86px auto
+
+    h1
+        color: $pink
+        margin-bottom: 24px
+
+    .position
+        font-weight: 700
+        max-width: 100%
+        font-size: 32px
+        line-height: 39px
+        margin: 0
+
+    &-title
+        width: 43%
+        min-height: 570px
+        .wrap
+            margin-top: 40px
+            justify-content: flex-start
+
+        p
+            margin-top: 40px
+            max-width: 400px
+
+        .btn
+            margin-right: 20px
+            &:last-of-type
+                margin: 0
+
+    &__img
+        display: block
+        width: 48%
+        height: 100%
+        object-position: top center
+        background-color: #F4F4F4
+        border-radius: 4px
+        object-fit: cover
+        position: absolute
+        top: 0
+        right: 16px
+        z-index: 100
+
+@media screen and ( max-width: 1200px )
+    .main
+        &-wrap
+            &.notFound
+                .main__img
+                    transform: none
+
+                .shapes
+                    width: 100%
+                    top: 0
+
+    .hero
+        &-slide
+            width: 95vw
+            text-align: center
+            &::before
+                bottom: 0
+            .bg
+                width: 490px
+                height: unset
+                max-width: unset
+                bottom: 50px
+                transform: translateX(-62%)
+                top: auto
+
+            &.light
+                padding-bottom: 0
+
+        .heading
+            margin: 0 auto 20px
+
+        p
+            margin: 0 auto 20px
+
+        .btn
+            display: block
+            width: 100%
+            max-width: 400px
+            margin: 0 auto 30px
+
+        &__img
+            position: static
+            transform: none
+            margin: 0 auto
+
+    .catalog
+        &-item
+            width: 48%
+
+    .sales
+        img
+            width: 100%
+            min-height: unset
+
+        &-item
+            display: block
+
+        &-title
+            min-height: 200px
+
+        &.sm
+            .wrap:not(.around)
+                justify-content: space-between
+            .sales
+                &-item
+                    width: 49%
+                    margin: 0 0 2%
+
+    .about
+        &-item
+            width: 40%
+            margin-bottom: 40px
+
+        .wrap
+
+    .news
+        &-item
+            // width: 48%
+
+    .reserve
+        img
+            width: 40%
+        form
+            width: 60%
+            padding: 40px 40px
+
+    .services
+        .wrap:not(.around)
+            justify-content: space-between
+        &-item
+            width: 48%
+            margin: 0 0 20px
+
+        &-btn
+            font-size: 14px
+            line-height: 18px
+
+        &__price
+            font-size: 14px
+            line-height: 18px
+
+        &-box
+            margin-bottom: 16px
+
+        .service
+            font-size: 12px
+            line-height: 16px
+            padding: 16px 20px
+
+    .feature
+        .heading
+            max-width: 90%
+            margin: 0 auto 30px
+        &-item
+            margin-bottom: 30px
+        .wrap
+            justify-content: space-around
+
+    .path
+        text-align: center
+        padding: 24px 0
+
+    .medic
+        padding: 0 0 20px
+        background-image: none
+        .container
+            max-width: 700px
+
+        h1
+            margin-bottom: 32px
+
+        &__img
+            position: static
+            width: 100%
+            margin-bottom: 32px
+
+        &-title
+            width: 100%
+            text-align: center
+            p,
+            .wrap
+                margin-left: auto
+                margin-right: auto
+                margin-top: 24px
+            .wrap
+                justify-content: center
+
+@media screen and ( max-width: 700px )
+    .hero
+        &-slider
+            width: 100%
+            left: 0
+        .heading
+            font-size: 24px
+            line-height: 29px
+            margin-bottom: 16px
+        .text
+            margin-bottom: 24px
+
+    .catalog
+        &-item
+            width: 100%
+            display: none
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4)
+                display: block
+
+    .sales
+        .wrap
+            width: 100vw
+            position: relative
+            left: -16px
+            flex-wrap: nowrap
+            overflow-x: scroll
+            padding: 0 0 0 16px
+            -ms-overflow-style: none
+            scrollbar-width: none
+            &::-webkit-scrollbar
+                display: none
+                width: 0
+                height: 0
+
+        &-title
+            padding: 20px 16px 60px
+
+        &-item
+            width: 330px
+            min-width: 330px
+            margin: 0 15px 20px 0
+
+        &.sm
+            .sales
+                &-item
+                    min-width: 330px
+                    width: 85vw
+                    max-width: 380px
+                    margin: 0 20px 0 0
+
+            img
+                height: 100%
+                min-height: 100%
+
+        .wrapper
+            flex-wrap: wrap
+            justify-content: space-around
+
+    .doctor
+        width: 320px
+        margin: 0 10px 20px
+        img
+            height: 320px
+        .btn
+            padding: 22px 0
+
+    .doctors
+        &-wrap
+            width: 100vw
+            position: relative
+            left: -16px
+            flex-wrap: nowrap
+            padding: 0 16px
+            overflow-x: scroll
+            -ms-overflow-style: none
+            scrollbar-width: none
+            &::-webkit-scrollbar
+                display: none
+                width: 0
+                height: 0
+
+            .doctor
+                min-width: 90vw
+                min-width: 90vw
+                margin-right: 16px
+
+    .about
+        &-info
+            img
+                position: relative
+                left: -16px
+                transform: none
+                z-index: 1
+
+        &__description
+            padding: 24px 0
+            position: static
+            margin: auto
+            width: 100%
+            max-width: 100%
+            background-color: #fff
+
+        &-item
+            width: 100%
+            max-width: 245px
+            margin: 0 auto 30px
+
+    .reserve
+        .container
+            display: block
+
+        .heading
+            font-size: 16px
+            line-height: 19px
+            text-align: center
+            margin-bottom: 24px
+
+        img
+            width: 100%
+
+        form
+            width: 100%
+            padding: 24px 16px
+            p
+                font-size: 12px
+                line-height: 130%
+
+        &-slider
+            width: 100%
+            left: 0
+
+    .news
+        .wrap
+            width: 100vw
+            position: relative
+            left: -16px
+            padding: 0 16px
+            flex-wrap: nowrap
+            overflow-x: scroll
+            -ms-overflow-style: none
+            scrollbar-width: none
+            &::-webkit-scrollbar
+                display: none
+                width: 0
+                height: 0
+
+        &-item
+            width: 325px
+            min-width: 325px
+            margin: 0 10px 20px 0
+
+            img
+                height: unset
+
+    .reviews
+        &-slider
+
+        img
+            width: 60px
+            height: 60px
+
+        &-title
+            &::before
+                top: 12px
+
+        &-item
+            width: 90vw
+            margin: 0 12px
+
+    .info
+        .col
+            width: 100%
+
+        .shapes
+            max-height: 80%
+            img:nth-child(3)
+                display: none !important
+
+    .services
+        .wrap
+            width: 100vw
+            position: relative
+            left: -16px
+            padding: 0 16px
+            flex-wrap: nowrap
+            overflow-x: scroll
+            -ms-overflow-style: none
+            scrollbar-width: none
+            &::-webkit-scrollbar
+                display: none
+                width: 0
+                height: 0
+
+        &-item
+            min-width: 90vw
+            width: 90vw
+            margin-right: 15px
+            &::before
+                opacity: 1
+
+        .heading
+            width: 85%
+            font-size: 14px
+            line-height: 17px
+            margin-bottom: 16px
+
+        .col
+            width: 100%
+
+    .feature
+        .heading
+            max-width: 100%
+            font-weight: 700
+            font-size: 24px
+            line-height: 29px
+
+    .medic
+        .position
+            font-size: 24px
+            line-height: 29px
+
+        &-title
+            .wrap
+                display: block
+
+            .btn
+                width: 100%
+                margin: 0 0 20px
+
+        p
+            font-size: 14px
+            line-height: 17px
+
+    .main-title
+        .btn
+            width: 100%
+            text-align: center
+            margin: 0 auto
+            max-width: 450px
