@@ -33,28 +33,28 @@ $('a[href*="#"]').on('click', function (e) {
 
 /*---------------------------------------------------end*/
 
-if ($('div').hasClass('reserve-slider')) {
-    $('.reserve-slider').slick({
-        dots: false,
+if ($('section').hasClass('slider')) {
+    $('.slider').slick({
+        dots: true,
         infinite: true,
-        arrows: false,
+        arrows: true,
         speed: 300,
-        adaptiveHeight: true,
         slidesToShow: 1,
-        centerMode: false,
-        variableWidth: false,
         slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1,
-                    // centerMode: true,
-                    centerPadding: '0px',
-                    arrows: true,
-                }
-            },
-        ]
+        adaptiveHeight: true,
+        centerMode: true,
+        variableWidth: true,
+        // responsive: [
+        //     {
+        //         breakpoint: 1200,
+        //         settings: {
+        //             slidesToShow: 1,
+        //             // centerMode: true,
+        //             centerPadding: '0px',
+        //             arrows: true,
+        //         }
+        //     },
+        // ]
     });
 }
 

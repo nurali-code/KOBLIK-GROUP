@@ -1,5 +1,7 @@
 .header
     padding: 24px 0
+    position: relative
+    z-index: 99999
     &-row,
     .container
         display: flex
@@ -10,9 +12,13 @@
         &:last-of-type
             border-top: 1px solid #CFCFCF
 
-    &-content
-        width: 83%
-        margin: 0 0 0 auto
+    .logo
+        align-self: flex-end
+        margin-bottom: 15px
+        width: 17%
+        max-width: 182px
+        img
+            width: 100%
 
     &-actions
         margin: 0 0 0 auto
@@ -40,16 +46,18 @@
         margin-left: 33px
 
     .nav
+        width: 82%
+        margin: 0 0 0 auto
         &__link
             padding: 10px 16px
             &:first-of-type
                 padding-left: 0
 
     .hoverDown
-        padding: 10px 75px 10px 0
+        padding: 10px 45px 10px 0
+        margin-right: 30px
         &-btn
             font-weight: bold
-
 
     form
         display: inline-block
@@ -57,6 +65,7 @@
         width: 240px
 
     input
+        background-color: #fff
         background-image: url('../img/search.svg')
         background-repeat: no-repeat
         background-position: left 15px center
@@ -67,3 +76,19 @@
 
     .btn
         margin-left: 27px
+
+    @media screen and ( max-width: 1520px )
+        .logo
+            width: 13%
+        &-row
+            padding: 10px 0
+        .nav
+            width: 84%
+
+            &__link
+                font-size: 16px
+                padding: 6px 14px
+
+        .hoverDown
+            padding: 6px 25px 6px 0
+            margin-right: 30px

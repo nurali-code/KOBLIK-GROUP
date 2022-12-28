@@ -1,252 +1,28 @@
 .footer
-    background-color: $blue
-    color: #fff
-    padding: 32px 0 35px
-    a
-        color: #fff
-
+    background-color: $orange
+    padding: 78px 0
+    margin-top: 70px
     .container
         align-items: flex-start
-
-    .logo
-        display: block
-        max-width: 250px
-        margin-bottom: 30px
-        img
-            display: block
-
-    .col,
-    &-nav
-        max-width: 24%
-
-    &-nav
-        a
-            display: block
-            &:hover
-                opacity: .6
-                text-decoration: underline
-
-    &__heading
-        font-weight: 700
-        font-size: 16px
-        line-height: 19px
-        margin: 0 0 16px
-
-    &__link
-        ont-weight: 700
-        font-size: 16px
-        line-height: 19px
-        padding: 5px 0
+    a,
+    p
+        font-weight: 300
+        font-size: 18px
+        line-height: 120%
         color: #fff
+        display: block
+        padding: 6px 0
 
-    &__text
-        font-weight: 400
-        font-size: 13px
-        line-height: 16px
-        a
-            text-decoration: underline
+    p 
+        padding: 14px 0
 
-    &__phone
-        padding: 20px 0 6px
-        font-weight: 700
-        font-size: 16px
-        line-height: 19px
+    hr 
+        max-width: 70%
+        margin: 8px 0
 
-    .socials
-        justify-content: flex-start
-        img
-            max-width: 40px
-
-    @media screen and ( max-width: 1100px )
-        .logo
-            margin: 0 40px 0 0
-            img
-                margin: 0 auto
-        .col
-            display: flex
-            max-width: 100%
-            justify-content: center
-            width: 100%
-            margin-bottom: 40px
-
-        &-nav
-            max-width: 31%
-            width: 100%
-
-    @media screen and ( max-width: 700px )
-        padding: 16px 0 6px
-        .container
-            display: block
-
-        .logo
-            margin: 0 auto 30px
-            img
-
-        &-nav
-            max-width: 100%
-            width: 100%
-            text-align: center
-            margin-bottom: 32px
-
-        .socials
-            justify-content: center
-            margin: 0
-
-        .col
-            display: block
-            text-align: center
-            margin-bottom: 24px
-
-.contacts
-    position: relative
-    z-index: 1
-    padding: 0
-    margin: auto 0 0 0
-    .container
-        z-index: unset
-        margin: 0 auto
-
-    &-wrap
-        position: relative
-        z-index: 1
-
-    .box
-        background-color: rgba(255, 255, 255, 0.9)
-        padding: 20px 26px
-        display: inline-block
-        min-width: 380px
-        position: absolute
-        top: 0
-        left: calc((100% - 1200px)/2)
-        z-index: 10000
-        position: inherit
-        a 
-            &:hover
-                text-decoration: underline
-
-    .headline
-        padding: 0 30px 16px
-        position: relative
-        z-index: 1000
-
-    &__heading
-        font-weight: 700
-        font-size: 16px
-        line-height: 19px
-        color: $blue
-        background-image: url('../img/location-fill.svg')
-        background-repeat: no-repeat
-        background-position: center left
-        padding-left: 22px
-        background-size: 14px 14px
-        margin: 0 0 10px
-
-    &__text
-        font-style: normal
-        font-weight: 400
-        font-size: 14px
-        line-height: 17px
-        color: $blue
-        margin: 0 0 20px
-        a
-            color: $blue
-
-    iframe
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 100%
-        z-index: -1
-        height: 100% !important
-        background-color: rgba(0, 0, 0, .05)
-
-    &-item
-        width: 32%
-        padding: 20px
-        background-color: #F4FBFC
-        iframe
-            display: block
-            margin-bottom: 24px
-            position: relative
-            left: -20px
-            width: calc( 100% + 40px ) !important
-            height: 300px !important
-            background-color: rgba(0, 0, 0, .1)
-
-        .email,
-        .phone,
-        .location
-            display: block
-            background-repeat: no-repeat
-            background-position: top 5px left
-            padding: 8px 0 8px 32px
-            background-size: 24px auto
-            font-weight: 500
-            font-size: 16px
-            line-height: 19px
-
-        .heading
-            font-weight: 700
-            font-size: 24px
-            line-height: 29px
-            text-align: center
-            margin-bottom: 30px
-
-        .location
-            background-image: url('../img/location-black.svg')
-            margin: 0px
-        .phone
-            background-image: url('../img/call.svg')
-
-        .email
-            background-image: url('../img/email.svg')
-
-        a
-            &:hover
-                text-decoration: underline
-
-        .btn
-            width: 100%
-            display: block
-            margin: 36px 0 0
-
-    @media screen and ( max-width: 1200px )
-        .box
-            left: 0
-            min-width: unset
-            width: 320px
-
-        &-item
-            min-width: 330px
-            width: 330px
-            margin-right: 16px
-            .heading
-                font-size: 20px
-                margin-bottom: 20px
-
-        &-wrapper
-            width: 100vw
-            position: relative
-            left: -16px
-            padding: 0 0 0 16px
-            flex-wrap: nowrap
-            overflow-x: scroll
-            -ms-overflow-style: none
-            scrollbar-width: none
-            &::-webkit-scrollbar
-                display: none
-                width: 0
-                height: 0
-
-    @media screen and ( max-width: 700px )
-        padding: 20px 0 0
-        .headline
-            padding-bottom: 0
-
-        .box
-            width: 100%
-            position: static
-
-        iframe
-            position: static
-            height: 450px !important
+    .col
+        width: 21%
+        a:hover 
+            background-color: rgba(255, 255, 255, .1)
+        &:first-child
+            align-self: center

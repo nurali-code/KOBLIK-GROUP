@@ -15,7 +15,7 @@ $orange: #F28E00
 
 body
     min-height: 105vh
-    color: #000
+    color: #40444E
     display: flex
     flex-direction: column
     background-color: #fff
@@ -25,8 +25,8 @@ body
 
 .container
     width: 100%
-    max-width: 1500px
-    padding: 0 16px
+    max-width: 1520px
+    padding: 0
     margin: 0 auto
     position: relative
     z-index: 1
@@ -41,12 +41,10 @@ h1
     margin: 0 0 32px
 
 .headline
-    font-style: normal
     font-weight: 700
-    font-size: 32px
-    line-height: 39px
-    color: $pink
-    margin: 0 0 32px 0
+    font-size: 48px
+    line-height: 56px
+    margin: 0 0 62px 0
 
 .textline
     font-style: normal
@@ -72,11 +70,11 @@ button
         opacity: .8
 
     &[disabled]
-        pointer-events: none 
+        pointer-events: none
         opacity: .5
 
 section
-    padding: 32px 0
+    padding: 35px 0
     position: relative
 
 .btn
@@ -133,11 +131,11 @@ input,
 textarea,
 select
     display: block
-    background-color: #F9F9F9
+    background-color: #F1F1F1
     border-radius: 4px
     height: 42px
     width: 100%
-    font-size: 18px
+    font-size: 16px
     font-weight: 400
     line-height: 100%
     padding: 0 15px 0 40px
@@ -154,10 +152,10 @@ label
 
 select
     cursor: pointer
-    background-image: url('../img/arrow-down_black.svg')
+    background-image: url('../img/arrow_down.svg')
     background-repeat: no-repeat
     background-position: center right 15px
-    background-size: 25px 25px
+    background-size: 14px auto
     appearance: none
     padding-right: 30px
     position: relative
@@ -171,89 +169,27 @@ select
     label
         display: block
 
-    .heading
-        display: block
-        padding-top: 4px
-        font-weight: 400
-        font-size: 16px
-        line-height: 120%
-
-    .descr
-        font-weight: 400
-        font-size: 16px
-        line-height: 22px
-        opacity: .7
-
-    &-wrap
-        margin-bottom: 20px
-        label
-            font-weight: 400
-            font-size: 16px
-            line-height: 120%
-            margin-bottom: 5px
-            color: black
-            opacity: .7
-
-        input
-            margin: 0
-
-        .wrap
-            display: flex
-            flex-wrap: nowrap
-            justify-content: space-between
-            label
-                display: block
-                width: 100%
-            input
-                width: 70%
-                // border-right: none 
-                border-radius: 6px 0px 0px 6px
-
-            select
-                font-size: 16px
-                padding: 0 15px
-                height: 50px
-                margin: 0
-                width: 30%
-                min-width: 87px
-                border-left: 0
-                border-radius: 0 6px 6px 0
-
-        &.err
-            label
-                color: red !important
-            input, select
-                border-color: rgba(red, .4)
-                animation: shadowErr 2s ease
-
-    &-count
-        display: flex
-        justify-content: space-between
-        align-items: center
-        background: #F3F4F4
-        border-radius: 6px
-        padding: 20px 16px
-
     &-checkbox,
     &-radio
-        position: relative
-        z-index: 1
         margin: 0 0 16px
         label
-            display: flex
-            justify-content: center
-            align-items: center
-            background-color: #E7F7FA
-            background-repeat: no-repeat
-            background-size: 24px 24px
-            background-position: center right 20px
-            padding: 10px 20px
-            font-weight: 500
-            font-size: 16px
-            text-align: center
-            line-height: 19px
-            min-height: 64px
+            font-weight: 300
+            font-size: 14px
+            line-height: 16px
+            position: relative
+            z-index: 1
             cursor: pointer
+            padding-left: 28px
+            &::before
+                content: ''
+                display: block
+                position: absolute
+                top: 0
+                border: 2px solid #DEDEDE
+                left: 0
+                width: 12px
+                height: 12px
+                background-color: #DEDEDE
 
         input
             width: 100%
@@ -264,12 +200,8 @@ select
             z-index: -1
             top: 0
             left: 0
-            &:checked ~ label
-                padding-right: 60px
-                padding-left: 60px
-                color: #fff
-                background-image: url('../img/tick-white.svg')
-                background-color: $green
+            &:checked ~ label::before
+                background-color: $orange
 
 .heading
     font-weight: 600
@@ -303,9 +235,9 @@ ul
         position: relative
 
 hr
-    background-color: rgba(255, 255, 255, .3)
+    background-color: rgba(255, 255, 255, .5)
     height: 1px
-    margin: 20px 0 20px
+    margin: 14px 0
 
 .hoverDown
     position: relative
@@ -346,3 +278,51 @@ hr
                 visibility: visible
                 transform: translateY(0)
 
+p
+    font-weight: 300
+    font-size: 24px
+    line-height: 28px
+    color: #40444E
+
+.saile
+    position: absolute
+    z-index: 222
+    top: 50%
+    right: 0
+    overflow: hidden
+    display: flex
+    align-items: center
+    font-weight: 700
+    font-size: 30px
+    line-height: 35px
+    padding: 15px 0 15px 120px
+    &::before
+        content: ''
+        display: block
+        width: 150%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        background-color: #F1F1F1
+
+        transform: matrix(0.85, 0, 0.5, 1, 0, 0)
+
+    &__heading
+        padding-right: 100px
+        background-image: url('../img/arrow_down_long.svg')
+        background-repeat: no-repeat
+        background-position: center right 10%
+        background-size: auto 90%
+
+    img
+        object-fit: cover
+        object-position: left center
+
+    &__img
+        max-height: 150px
+
+@media screen and ( max-width: 1520px )
+    .container
+        max-width: 1200px
