@@ -7,7 +7,7 @@
 @import 'slick'
 
 .main
-    padding: 35px 0
+    padding: 35px 0 150px
     position: relative
     &__text
         max-width: 870px
@@ -233,8 +233,13 @@
             visibility: visible
             opacity: 1
 
+        &-arrow
+            left: calc((100% - 1520px)/2)
+
+        &-next
+            left: calc((100% - 1240px)/2)
+
         &-dots
-            max-width: 1520px
             margin: 60px 0 0 calc((100% - 1520px)/2)
 
 .online
@@ -320,6 +325,7 @@
             opacity: 0
             transition: all ease .3s
             transform: translateX(-20px)
+            max-width: calc( 50% - 65px )
 
         &:hover
             .heading
@@ -364,3 +370,20 @@
         font-weight: 300
         font-size: 18px
         line-height: 130%
+
+@media screen and ( max-width: 1520px )
+
+    .slider
+        &-slide
+            max-width: 1200px
+
+        .slick
+            &-dots
+                margin-top: 30px
+                margin: 60px 0 0 calc((100% - 1200px)/2)
+
+            &-prev
+                left: calc((100% - 1200px)/2)
+
+            &-next
+                left: calc((100% - 910px)/2)
