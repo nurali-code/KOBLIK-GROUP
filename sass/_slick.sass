@@ -89,29 +89,35 @@
         display: none
 
     &-arrow
-        width: 50px
-        height: 50px
-        background-color: transparent
+        width: 56px
+        height: 56px
+        background-color: #eee
         color: transparent
         position: absolute
-        top: 50%
-        margin-top: -30px
+        bottom: 0
+        left: calc((100% - 1520px)/2)
         z-index: 100000
+        border-radius: 50%
         border: none
-        background-image: url('../img/slider-arrow.svg')
         background-repeat: no-repeat
         background-position: center center
-        background-size: contain
+        background-size: 50%
 
         &::before
             display: none
-    
+
+        &:hover 
+            background-color: rgba($orange, .2)
+
     &-prev
-        left: -50px
-        transform: scale(-1) !important
+        background-image: url('../img/slider_left.svg')
+        // left: -50px
+        // transform: scale(-1) !important
 
     &-next
-        right: -50px
+        left: calc((100% - 1240px)/2)
+        background-image: url('../img/slider_right.svg')
+        // right: -50px
 
     &-disabled
         cursor: no-drop
@@ -121,31 +127,34 @@
 
     &-dots
         display: block
-        width: 100%
+        width: 196px
         padding: 0
+        margin: 0
         text-align: center
+        padding: 20px 0
         li
             font-size: 0
             line-height: 0
             width: unset
             display: inline-block
             margin: 0
-            padding: 0 4px
+            padding: 0 2px
             &::before
                 display: none
 
         button
-            width: 12px
+            width: 6px
+            height: 6px
             border-radius: 50%
-            height: 12px
             background-color: #BDBDBD
             margin: 0
             padding: 0
+            overflow: hidden
             color: transparent
 
         .slick-active
             button
-                background-color: $blue
+                background-color: $orange
 
     @media screen and ( max-width: 1200px )
         &-arrow
